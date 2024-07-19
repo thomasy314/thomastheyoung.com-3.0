@@ -1,0 +1,8 @@
+@keyframes min-max-yeast {
+    from {
+        font-variation-settings: "GRVT" 670, "YEST" 0
+    }
+    to {
+        font-variation-settings: "GRVT" 670, "YEST" 1000
+    }
+}
