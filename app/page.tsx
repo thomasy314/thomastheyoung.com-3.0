@@ -1,16 +1,20 @@
 import { WaveText } from "@/components/animation/textanimation";
-import HillsBackground from "@/components/background/hillsbackground";
+import ParallaxBackground from "@/components/background/parallaxbackground";
+
+/*
+
+*/
 
 export default function Home() {
   return (
     <>
-      <HillsBackground>
+      <ParallaxBackground>
         <div className="flex justify-center items-center w-full h-full">
           <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
             Thomas Young
           </h1>
         </div>
-      </HillsBackground>
+      </ParallaxBackground>
     </>
   );
 }

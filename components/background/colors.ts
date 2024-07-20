@@ -16,6 +16,7 @@ interface rgbColor {
     backClouds: string;
   };
   
+  // TODO: Move colors into config and move functions into util
   export default class ColorManager {
     colorPalettes: { [name: string]:BackgroundPalette; } = {}
   
