@@ -1,0 +1,43 @@
+.side-nav {
+    height: 100vh;
+
+    z-index: var(--zindex-side-bar);
+}
+
+.sidebar-container {
+    height: 100%;
+    width: 100%;
+
+    left: 0;
+
+    background-color: white;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    .sidebar-container {
+
+        left: -100%;
+        position: fixed;
+        top: 0;
+        z-index: var(--zindex-fixed);
+        width: 100%;
+
+        background-color: white;
+
+        transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #sidebar-active:checked~.sidebar-container {
+        left: 0;
+    }
+}

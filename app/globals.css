@@ -32,6 +32,18 @@
     --chart-5: 27 87% 67%;
 
     --font-display: cheee-variable;
+
+    --zindex-background: -1;
+    --zindex-page-element: 100;
+    --zindex-side-bar: 110;
+
+    --zindex-dropdown: 200;
+    --zindex-sticky: 220;
+    --zindex-fixed: 230;
+    --zindex-modal-backdrop: 240;
+    --zindex-modal: 250;
+    --zindex-popover: 260;
+    --zindex-tooltip: 270;
   }
 
   .dark {
@@ -60,6 +72,8 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --font-display: cheee-variable;
   }
 }
 

@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-
-import SideNav, { SideNavItemProps } from "@/components/navigation/sidenav";
-
 import { cn } from "@/lib/utils";
+import SideNav from "@/components/navigation/sidenav";
 
 import "./globals.css";
-import MobileSideBar from "@/components/navigation/collapsesidebar";
+import { sidebarRoutes } from "@/config/navigationconfig";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,26 +22,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const sideNavItemInfo: SideNavItemProps[] = [
-    {
-      name: "art",
-      href: "/"
-    },
-    {
-      name: "models",
-      href: "/models"
-    },
-    {
-      name: "projects",
-      href: "/projects"
-    },
-    {
-      name: "about",
-      href: "/about"
-    },
-  ]
-
-  // TODO: Consider combining SideNav and MobileSideBar into one component
   return (
     <html lang="en">
       <head>
@@ -54,8 +32,7 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased mx-50 flex",
           fontSans.variable
         )} >
-        <SideNav className="w-1/6 hidden md:block" sideNavItemInfo={sideNavItemInfo} />
-        <MobileSideBar className="w-1/12 block md:hidden align-top justify-top" sideNavItemInfo={sideNavItemInfo} />
+        <SideNav className="w-1/6" sideNavItemInfo={sidebarRoutes} />
         <div className="w-full md:w-5/6">
           {children}
         </div>

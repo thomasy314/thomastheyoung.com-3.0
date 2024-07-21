@@ -1,13 +1,9 @@
 "use client"
 
-import { CSSProperties, PropsWithChildren, Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { CSSProperties, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import './parallaxbackground.css';
 import ColorManager from './colors';
-import { BackgroundConfig, BackgroundConfigLayerData, backgroundConfig } from './parallaxbackgroundConfig';
-
-/*
-    TODO: fade in colors on load
-*/
+import { BackgroundConfig, BackgroundConfigLayerData, backgroundConfig } from '@/config/parallaxbackgroundconfig';
 
 // Format background array with pixels (px)
 const formatBackgroundPosArrayPX = (backgroundPosArr: number[]): string => {
