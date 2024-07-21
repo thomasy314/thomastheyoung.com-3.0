@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import './sidenav.css';
-import { MenuIcon, XIcon } from "lucide-react";
 import { NavigationInfo } from "@/config/navigationconfig";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import SocialMediaIcons from "../ui/socialmediaicons";
 
 type SideNavProps = {
     className?: string
@@ -31,17 +32,18 @@ const SideNav = ({ sideNavItemInfo, className }: SideNavProps) => {
         <nav className={`side-nav fixed md:static ${className}`} aria-label="Sidebar">
             <input type="checkbox" id="sidebar-active" className="hidden" />
             <label htmlFor="sidebar-active" className="open-sidebar-button block md:hidden p-2">
-                <MenuIcon />
+                <IconMenu2 className="cursor-pointer" />
             </label>
 
 
             <div className="sidebar-container">
                 <label htmlFor="sidebar-active" className="close-sidebar-button block md:hidden p-2">
-                    <XIcon />
+                    <IconX className="cursor-pointer" />
                 </label>
-                <div className="links-container">
+                <div className="links-container h-5/6">
                     {sideNavItems}
                 </div>
+                <SocialMediaIcons />
             </div>
         </nav>
     )
