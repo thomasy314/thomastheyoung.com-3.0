@@ -4,6 +4,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { CameraControls, Html, PerspectiveCamera } from "@react-three/drei";
 import { Suspense, useEffect, useState } from "react";
 import modelData, { ModelData } from "@/config/modelsconfig";
+import { IconPointFilled } from "@tabler/icons-react";
 
 function Loader() {
   return <Html className="animate-bounce" center>loaded.</Html>
@@ -18,6 +19,7 @@ export default function ModelViewer() {
 
   const selectionList = modelData.map((info, i) => [
     <li key={i} onClick={() => setCurModel(info)} className="list-none p-2 cursor-pointer">
+      <IconPointFilled color={info.color} />
       {info.commonName}
     </li>
   ])
