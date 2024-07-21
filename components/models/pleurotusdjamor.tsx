@@ -26,8 +26,8 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Pleurotus(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/Pleurotus_djamor.glb') as GLTFResult
+export function PleurotusDjamor(props: JSX.IntrinsicElements['group']) {
+  const { nodes, materials } = useGLTF('/models/Pleurotus_djamor.glb') as GLTFResult
 
   /*useFrame(() => {
     materials['Pink.001'].color.offsetHSL(.01,0,0);
@@ -49,4 +49,4 @@ export function Pleurotus(props: JSX.IntrinsicElements['group']) {
   )
 }
 
-useGLTF.preload('/Pleurotus_djamor.glb')
+useGLTF.preload('/models/Pleurotus_djamor.glb')

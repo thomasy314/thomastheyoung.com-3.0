@@ -94,9 +94,7 @@ export default function ParallaxBackground({ children }: PropsWithChildren<Hills
     }
 
     useEffect(() => {
-        const initialHillsRef = hillsRef.current
         loadBackground(backgroundConfig, color);
-
     }, []);
 
     const style: CSSProperties = hillsRef.current ?
