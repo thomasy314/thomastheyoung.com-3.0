@@ -29,23 +29,25 @@ const SideNav = ({ sideNavItemInfo, className }: SideNavProps) => {
     });
 
     return (
-        <nav className={`side-nav fixed md:static ${className}`} aria-label="Sidebar">
-            <input type="checkbox" id="sidebar-active" className="hidden" />
-            <label htmlFor="sidebar-active" className="open-sidebar-button block md:hidden p-2">
-                <IconMenu2 className="cursor-pointer" />
-            </label>
-
-
-            <div className="sidebar-container">
-                <label htmlFor="sidebar-active" className="close-sidebar-button block md:hidden p-2">
-                    <IconX className="cursor-pointer" />
+        <>
+            <nav className={`side-nav fixed md:static ${className}`} aria-label="Sidebar">
+                <input type="checkbox" id="sidebar-active" className="hidden" />
+                <label htmlFor="sidebar-active" className="open-sidebar-button block md:hidden p-2">
+                    <IconMenu2 className="cursor-pointer" />
                 </label>
-                <div className="links-container h-5/6">
-                    {sideNavItems}
+
+
+                <div className="sidebar-container">
+                    <label htmlFor="sidebar-active" className="close-sidebar-button block md:hidden p-2">
+                        <IconX className="cursor-pointer" />
+                    </label>
+                    <div className="links-container h-5/6">
+                        {sideNavItems}
+                    </div>
+                    <SocialMediaIcons />
                 </div>
-                <SocialMediaIcons />
-            </div>
-        </nav>
+            </nav>
+        </>
     )
 }
 

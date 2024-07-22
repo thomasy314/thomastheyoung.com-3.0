@@ -39,14 +39,14 @@ export default function ModelViewer() {
   }
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen py-20'>
+    <div className='flex flex-col relative justify-center items-center h-screen overflow-hidden'>
       <div className="flex flex-col items-center" >
-        <h2 className="font-display text-6xl">{curModel.name}</h2>
+        <h2 className="font-display text-4xl md:text-6xl mt-20">{curModel.name}</h2>
         <h3>{curModel.subtitle}</h3>
       </div>
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center">
 
-        <div className="fixed w-full h-full flex-wrap z-10">
+        <div className="absolute top-0 w-full h-full flex-wrap z-10">
           <Canvas>
             <Camera />
             <CameraControls />
@@ -59,10 +59,10 @@ export default function ModelViewer() {
           </Canvas>
         </div>
       </div>
-      <div className="absolute bottom-10 flex mt-10 flex-col md:flex-row items-center justify-center w-full opacity-0 z-20">
+      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-1/2 opacity-0 z-20">
         {selectionList}
       </div>
-      <div className="absolute bottom-10 flex mt-10 flex-col md:flex-row items-center justify-center w-full z-0">
+      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-1/2 z-0">
         {selectionList}
       </div>
     </div>

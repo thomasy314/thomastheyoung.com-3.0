@@ -57,7 +57,7 @@ const modelData: ModelData[] = [
         name: "Fly Agaric",
         subtitle: "Amanita muscaria",
         model: AmanitaMuscaria,
-        startPosition: [0, 0, 30],
+        startPosition: [0, 0, 50],
         bulletColor: "#E93123",
         lights: [
             {
