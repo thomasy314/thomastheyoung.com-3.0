@@ -19,8 +19,8 @@ export default function ModelViewer() {
 
   const selectionList = modelData.map((info, i) => [
     <div key={i} onClick={() => setCurModel(info)} className="flex flex-row list-none p-2 w-inherit gap-0 justify-center items-center cursor-pointer">
-      <IconPointFilled color={info.color} />
-      {info.commonName}
+      <IconPointFilled color={info.bulletColor} />
+      {info.name}
     </div>
   ]);
 
@@ -41,8 +41,8 @@ export default function ModelViewer() {
   return (
     <div className='flex flex-col justify-center items-center h-screen py-20'>
       <div className="flex flex-col items-center" >
-        <h2>{curModel.commonName}</h2>
-        <h3>{`${curModel.genus} ${curModel.species}`}</h3>
+        <h2 className="font-display text-6xl">{curModel.name}</h2>
+        <h3>{curModel.subtitle}</h3>
       </div>
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center">
 

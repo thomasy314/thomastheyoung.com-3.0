@@ -5,23 +5,21 @@ import { DirectionalLightProps } from "@react-three/fiber"
 import { ReactNode } from "react"
 
 export type ModelData = {
-    commonName: string,
-    genus: string,
-    species: string,
+    name: string,
+    subtitle: string,
     model: (props: JSX.IntrinsicElements['group']) => ReactNode,
     startPosition: [number, number, number],
-    color: string,
+    bulletColor: string,
     lights: DirectionalLightProps[]
 }
 
 const modelData: ModelData[] = [
     {
-        commonName: "Pink Oyster Mushroom",
-        genus: "Pleurotus",
-        species: "djamor",
+        name: "Pink Oyster Mushroom",
+        subtitle: "Pleurotus djamor",
         model: PleurotusDjamor,
         startPosition: [0, 0, 30],
-        color: "#f88379",
+        bulletColor: "#f88379",
         lights: [
             {
                 position: [5, 3, 5]
@@ -36,12 +34,11 @@ const modelData: ModelData[] = [
             }
         ]
     }, {
-        commonName: "Yellow Morel",
-        genus: "Morchella",
-        species: "esculenta",
+        name: "Yellow Morel",
+        subtitle: "Morchella esculenta",
         model: MorchellaEsculenta,
         startPosition: [0, 0, 100],
-        color: "#ba9561",
+        bulletColor: "#ba9561",
         lights: [
             {
                 position: [5, 3, 5]
@@ -57,12 +54,11 @@ const modelData: ModelData[] = [
         ]
     },
     {
-        commonName: "Fly Agaric",
-        genus: "Amanita",
-        species: "muscaria",
+        name: "Fly Agaric",
+        subtitle: "Amanita muscaria",
         model: AmanitaMuscaria,
         startPosition: [0, 0, 30],
-        color: "#E93123",
+        bulletColor: "#E93123",
         lights: [
             {
                 position: [5, 10, 5] // front right top

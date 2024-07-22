@@ -7,7 +7,7 @@ export default function AboutMe() {
         <ParallaxBackground disable>
             <div className="flex flex-col justify-top items-center w-full h-full bg-white/50 backdrop-blur-md py-20">
                 <h1 className="font-display text-9xl">Hello!</h1>
-                <div className="w-3/4 xl:w-1/2 font-medium text-justify pt-5">
+                <div className="w-3/4 xl:w-1/2 text-justify pt-5">
                     <p>
                         My name is Thomas Young, a software engineer, amateur mycologist, and artist living in Oakland, CA. Throughout my life, I've spent as much time as possible diving into anything and everything that piques my curiosity.
                     </p>

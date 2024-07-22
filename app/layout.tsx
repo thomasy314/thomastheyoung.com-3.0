@@ -28,10 +28,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://use.typekit.net/acz6mdi.css" />
       </head>
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased mx-50 flex",
-          fontSans.variable
-        )} >
+        className="min-h-screen bg-background font-sans antialiased mx-50 flex font-serif font-semibold">
         <SideNav className="w-1/6" sideNavItemInfo={sidebarRoutes} />
         <div className="w-full md:w-5/6">
           {children}
