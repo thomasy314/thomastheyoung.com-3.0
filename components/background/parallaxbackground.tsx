@@ -18,9 +18,11 @@ const formatBackgroundPosArrayRelativeToPos = (position: "top" | "bottom" | "rig
 const colorManager = new ColorManager();
 const color: string[] = colorManager.getRandomColor();
 
-type HillsBackgroundProps = {}
+type HillsBackgroundProps = {
+    disable?: boolean
+}
 
-export default function ParallaxBackground({ children }: PropsWithChildren<HillsBackgroundProps>) {
+export default function ParallaxBackground({ disable, children }: PropsWithChildren<HillsBackgroundProps>) {
 
     const hillsRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +31,7 @@ export default function ParallaxBackground({ children }: PropsWithChildren<Hills
     const [parallaxOn, setParallaxOn] = useState(false);
 
     const move = (movementX: number, movementY: number, on: boolean) => {
-        if (on == false) return;
+        if (on == false || disable) return;
 
         const speedX = -movementX * backgroundConfig.globalParallaxSettings.speedXMultiplier;
         const speedY = -movementY * backgroundConfig.globalParallaxSettings.speedYMultiplier;

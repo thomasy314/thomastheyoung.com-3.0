@@ -25,9 +25,9 @@ export function MorchellaEsculenta(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/Morchella_esculenta.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.CapTexture.geometry} material={materials.DesertYellow} />
-      <mesh geometry={nodes.CqpInside.geometry} material={materials.DesertYellowDark} scale={0.96} />
-      <mesh geometry={nodes.Stipe.geometry} material={materials.Cream} position={[0.28, -4.819, -0.144]} scale={[0.769, 0.883, 0.769]} />
+      <mesh geometry={nodes.CapTexture.geometry} material={materials.DesertYellow} position={[0, 8, 0]} scale={0.5} />
+      <mesh geometry={nodes.CqpInside.geometry} material={materials.DesertYellowDark} position={[0, 8, 0]} scale={0.96 * 0.5} />
+      <mesh geometry={nodes.Stipe.geometry} material={materials.Cream} position={[0.28, 4.819, -0.144]} scale={[0.769*0.5, 0.883*0.5, 0.769*0.5]} />
     </group>
   )
 }

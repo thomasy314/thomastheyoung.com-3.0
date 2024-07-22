@@ -32,17 +32,17 @@ export function AmanitaMuscaria(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/Amanita_muscaria.glb') as GLTFResult
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Gill_Ref.geometry} material={materials.White} />
-      <mesh geometry={nodes.Stipe.geometry} material={nodes.Stipe.material} position={[0, -7, 0]} scale={[1.122, 0.953, 1.122]} />
-      <mesh geometry={nodes.Volva.geometry} material={nodes.Volva.material} position={[0, -13.475, 0]} scale={[0.939, 1.057, 0.939]} />
-      <mesh geometry={nodes.Volva_Ruffle_3.geometry} material={nodes.Volva_Ruffle_3.material} position={[0, -12.873, 0]} scale={[0.939, 1.057, 0.939]} />
-      <mesh geometry={nodes.Volva_Ruffle_2.geometry} material={nodes.Volva_Ruffle_2.material} position={[0, -13.802, 0]} rotation={[-Math.PI, 0.628, -Math.PI]} scale={[1.006, 1.292, 1.006]} />
-      <mesh geometry={nodes.Volva_Ruffle_1.geometry} material={nodes.Volva_Ruffle_1.material} position={[0, -14.846, 0]} rotation={[0, 1.499, 0]} scale={[1.073, 1.619, 1.073]} />
-      <mesh geometry={nodes.Annulus.geometry} material={nodes.Annulus.material} position={[0, -5.08, 0]} />
-      <mesh geometry={nodes.Stipe_Texture.geometry} material={nodes.Stipe_Texture.material} position={[0, -7, 0]} scale={[1.006, 0.875, 1.006]} />
-      <mesh geometry={nodes.Striation.geometry} material={materials.Red} />
-      <mesh geometry={nodes.Sphere001.geometry} material={materials.Red} />
-      <mesh geometry={nodes.Sphere001_1.geometry} material={materials.White} />
+      <mesh geometry={nodes.Gill_Ref.geometry} material={materials.White} position={[0, 5, 0]} />
+      <mesh geometry={nodes.Stipe.geometry} material={nodes.Stipe.material} position={[0, -2, 0]} scale={[1.122, 0.953, 1.122]} />
+      <mesh geometry={nodes.Volva.geometry} material={nodes.Volva.material} position={[0, -8.475, 0]} scale={[0.939, 1.057, 0.939]} />
+      <mesh geometry={nodes.Volva_Ruffle_3.geometry} material={nodes.Volva_Ruffle_3.material} position={[0, -7.873, 0]} scale={[0.939, 1.057, 0.939]} />
+      <mesh geometry={nodes.Volva_Ruffle_2.geometry} material={nodes.Volva_Ruffle_2.material} position={[0, -8.802, 0]} rotation={[-Math.PI, 0.628, -Math.PI]} scale={[1.006, 1.292, 1.006]} />
+      <mesh geometry={nodes.Volva_Ruffle_1.geometry} material={nodes.Volva_Ruffle_1.material} position={[0, -9.846, 0]} rotation={[0, 1.499, 0]} scale={[1.073, 1.619, 1.073]} />
+      <mesh geometry={nodes.Annulus.geometry} material={nodes.Annulus.material} position={[0, -0.08, 0]} />
+      <mesh geometry={nodes.Stipe_Texture.geometry} material={nodes.Stipe_Texture.material} position={[0, -2, 0]} scale={[1.006, 0.875, 1.006]} />
+      <mesh geometry={nodes.Striation.geometry} material={materials.Red} position={[0, 5, 0]} />
+      <mesh geometry={nodes.Sphere001.geometry} material={materials.Red} position={[0, 5, 0]} />
+      <mesh geometry={nodes.Sphere001_1.geometry} material={materials.White} position={[0, 5, 0]} />
     </group>
   )
 }

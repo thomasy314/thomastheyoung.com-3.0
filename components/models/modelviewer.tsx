@@ -1,13 +1,13 @@
 "use client";
 
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { CameraControls, Html, PerspectiveCamera } from "@react-three/drei";
 import { Suspense, useEffect, useState } from "react";
 import modelData, { ModelData } from "@/config/modelsconfig";
 import { IconPointFilled } from "@tabler/icons-react";
 
 function Loader() {
-  return <Html className="animate-bounce" center>loaded.</Html>
+  return <Html className="animate-bounce" center>Loading.</Html>
 }
 
 /*
@@ -15,14 +15,18 @@ function Loader() {
 */
 
 export default function ModelViewer() {
-  const [curModel, setCurModel] = useState<ModelData>(modelData[0]);
+  const [curModel, setCurModel] = useState<ModelData>(modelData[2]);
 
   const selectionList = modelData.map((info, i) => [
-    <li key={i} onClick={() => setCurModel(info)} className="list-none p-2 cursor-pointer">
+    <div key={i} onClick={() => setCurModel(info)} className="flex flex-row list-none p-2 w-inherit gap-0 justify-center items-center cursor-pointer">
       <IconPointFilled color={info.color} />
       {info.commonName}
-    </li>
-  ])
+    </div>
+  ]);
+
+  const lights = curModel.lights?.map((lightProps, i) => {
+    return <directionalLight {...lightProps} />
+  })
 
   const Camera = () => {
     const camera = useThree(state => state.camera);
@@ -36,27 +40,30 @@ export default function ModelViewer() {
 
   return (
     <div className='flex flex-col justify-center items-center h-screen py-20'>
-      <h2>{curModel.commonName}</h2>
-      <h3>{`${curModel.genus} ${curModel.species}`}</h3>
+      <div className="flex flex-col items-center" >
+        <h2>{curModel.commonName}</h2>
+        <h3>{`${curModel.genus} ${curModel.species}`}</h3>
+      </div>
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center">
 
-        <div className="block border border-black w-full md:w-3/4 h-full flex-wrap">
+        <div className="fixed w-full h-full flex-wrap z-10">
           <Canvas>
             <Camera />
             <CameraControls />
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[0, 0, 0]} />
-            <directionalLight position={[-5, 3, 5]} />
-            <directionalLight position={[5, -3, -5]} intensity={0.5} />
-            <directionalLight position={[5, -3, 5]} intensity={0.5} />
+            <ambientLight intensity={.5} />
+            {lights}
+            <pointLight position={[0, -20, 0]} intensity={20} decay={0.75} />
             <Suspense fallback={<Loader />}>
               <curModel.model />
             </Suspense>
           </Canvas>
         </div>
-        <ul className="w-full md:w-1/12">
-          {selectionList}
-        </ul>
+      </div>
+      <div className="absolute bottom-10 flex mt-10 flex-col md:flex-row items-center justify-center w-full opacity-0 z-20">
+        {selectionList}
+      </div>
+      <div className="absolute bottom-10 flex mt-10 flex-col md:flex-row items-center justify-center w-full z-0">
+        {selectionList}
       </div>
     </div>
   );

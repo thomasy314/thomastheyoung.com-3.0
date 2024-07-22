@@ -13,10 +13,10 @@ export const sidebarRoutes: NavigationInfo[] = [
         name: "models",
         href: "/models"
     },
-    {
+    /*{
         name: "projects",
         href: "/projects"
-    },
+    },*/
     {
         name: "about",
         href: "/about"
