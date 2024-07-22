@@ -9,7 +9,7 @@ export default function AboutMe() {
                 <h1 className="font-display text-9xl">Hello!</h1>
                 <div className="w-3/4 xl:w-1/2 text-justify pt-5">
                     <p>
-                        My name is Thomas Young, a software engineer, amateur mycologist, and artist living in Oakland, CA. Throughout my life, I've spent as much time as possible diving into anything and everything that piques my curiosity.
+                        My name is Thomas Young, a software engineer, amateur mycologist, and artist living in Oakland, CA. Throughout my life, I&apos;ve spent as much time as possible diving into anything and everything that piques my curiosity.
                     </p>
                     <br />
                     <p>
@@ -21,7 +21,7 @@ export default function AboutMe() {
                     </p>
                     <br />
                     <p>
-                        Now that Cluster Mush is up and running smoothly, I'm looking to re-enter the world of software development. I'm excited to bring the solid technical foundation I built at AWS and the strong research and self-taught skills I've gained from running Cluster Mush into new and exciting projects.
+                        Now that Cluster Mush is up and running smoothly, I&apos;m looking to re-enter the world of software development. I&apos;m excited to bring the solid technical foundation I built at AWS and the strong research and self-taught skills I&apos;ve gained from running Cluster Mush into new and exciting projects.
                     </p>
                     <SocialMediaIcons size={28} className="pt-10" />
                 </div>

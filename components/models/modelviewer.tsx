@@ -25,7 +25,7 @@ export default function ModelViewer() {
   ]);
 
   const lights = curModel.lights?.map((lightProps, i) => {
-    return <directionalLight {...lightProps} />
+    return <directionalLight key={i} {...lightProps} />
   })
 
   const Camera = () => {
