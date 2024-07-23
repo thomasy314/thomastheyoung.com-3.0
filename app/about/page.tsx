@@ -5,7 +5,7 @@ import SocialMediaIcons from "@/components/ui/socialmediaicons";
 export default function AboutMe() {
     return (
         <ParallaxBackground disable>
-            <div className="flex flex-col justify-top items-center w-full h-full bg-white/50 backdrop-blur-md py-20">
+            <div className="flex flex-col justify-top items-center w-full h-full bg-white/50 backdrop-blur-md py-20 overflow-scroll">
                 <h1 className="font-display text-9xl">Hello!</h1>
                 <div className="w-3/4 xl:w-1/2 text-justify pt-5">
                     <p>
