@@ -18,7 +18,7 @@ const modelData: ModelData[] = [
         name: "Pink Oyster Mushroom",
         subtitle: "Pleurotus djamor",
         model: PleurotusDjamor,
-        startPosition: [0, 0, 30],
+        startPosition: [0, 0, 40],
         bulletColor: "#f88379",
         lights: [
             {

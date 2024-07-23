@@ -6,9 +6,13 @@ export type NavigationInfo = {
 
 export const sidebarRoutes: NavigationInfo[] = [
     {
-        name: "art",
+        name: "home",
         href: "/"
     },
+    /*{
+        name: "art",
+        href: "/"
+    },*/
     {
         name: "models",
         href: "/models"

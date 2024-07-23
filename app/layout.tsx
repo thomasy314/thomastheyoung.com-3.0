@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import { cn } from "@/lib/utils";
 import SideNav from "@/components/navigation/sidenav";
 
 import "./globals.css";
@@ -26,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/acz6mdi.css" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className="h-screen bg-background font-sans antialiased flex font-serif font-semibold">

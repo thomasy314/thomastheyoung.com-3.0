@@ -1,4 +1,4 @@
-@keyframes test {
+@keyframes scrolling {
     0% {
         background-position-x:
             var(--base-background-pos-x),
@@ -57,7 +57,7 @@
     width: 100%;
     overflow-y: hidden;
     height: 100%;
-    animation-name: test;
+    /*animation-name: scrolling;*/
     animation-duration: 90s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;

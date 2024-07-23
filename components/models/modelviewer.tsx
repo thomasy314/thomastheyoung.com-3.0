@@ -15,7 +15,7 @@ function Loader() {
 */
 
 export default function ModelViewer() {
-  const [curModel, setCurModel] = useState<ModelData>(modelData[2]);
+  const [curModel, setCurModel] = useState<ModelData>(modelData[0]);
 
   const selectionList = modelData.map((info, i) => [
     <div key={i} onClick={() => setCurModel(info)} className="flex flex-row list-none p-2 w-inherit gap-0 justify-center items-center cursor-pointer">

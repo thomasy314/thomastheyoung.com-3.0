@@ -6,3 +6,12 @@
         font-variation-settings: "GRVT" 670, "YEST" 1000
     }
 }
+
+@keyframes min-max-gravity {
+    from {
+        font-variation-settings: "GRVT" 670, "YEST" 50
+    }
+    to {
+        font-variation-settings: "GRVT" 0, "YEST" 50
+    }
+}
