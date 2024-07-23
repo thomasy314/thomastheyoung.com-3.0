@@ -3,7 +3,7 @@
 import { CSSProperties, PropsWithChildren, useEffect, useRef, useState } from 'react';
 import './parallaxbackground.css';
 import ColorManager from './colors';
-import { BackgroundConfig, BackgroundConfigLayerData, backgroundConfig } from '@/config/parallaxbackgroundconfig';
+import { BackgroundConfig, BackgroundConfigLayerData, backgroundConfig } from '@/config/backgroundconfig';
 
 // Format background array with pixels (px)
 const formatBackgroundPosArrayPX = (backgroundPosArr: number[]): string => {
@@ -18,13 +18,13 @@ const formatBackgroundPosArrayRelativeToPos = (position: "top" | "bottom" | "rig
 const colorManager = new ColorManager();
 const color: string[] = colorManager.getRandomColor();
 
-type HillsBackgroundProps = {
+type ParallaxBackgroundProps = {
     disable?: boolean
 }
 
-export default function ParallaxBackground({ disable, children }: PropsWithChildren<HillsBackgroundProps>) {
+export default function ParallaxBackground({ disable, children }: PropsWithChildren<ParallaxBackgroundProps>) {
 
-    const hillsRef = useRef<HTMLDivElement>(null);
+    const backgroundDivRef = useRef<HTMLDivElement>(null);
 
     const [backgroundPosX, setBackgroundPosX] = useState([0]);
     const [backgroundPosY, setBackgroundPosY] = useState([0]);
@@ -33,8 +33,8 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
     const move = (movementX: number, movementY: number, on: boolean) => {
         if (on == false || disable) return;
 
-        const speedX = -movementX * backgroundConfig.globalParallaxSettings.speedXMultiplier;
-        const speedY = -movementY * backgroundConfig.globalParallaxSettings.speedYMultiplier;
+        const speedX = -movementX * backgroundConfig.parallaxSettings.speedXMultiplier;
+        const speedY = -movementY * backgroundConfig.parallaxSettings.speedYMultiplier;
 
 
         if (!isFinite(speedX) || Number.isNaN(speedX) || !isFinite(speedY) || Number.isNaN(speedY)) {
@@ -44,7 +44,7 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
         setBackgroundPosX(oldX => {
             return oldX.map((x: number, i: number) => {
                 const layer = backgroundConfig.backgroundLayerData[i].layer;
-                const speedModX = backgroundConfig.globalParallaxSettings.layerSpeedModFunction(layer);
+                const speedModX = backgroundConfig.parallaxSettings.layerSpeedModFunction(layer);
                 return x + (speedX * speedModX)
             });
         });
@@ -52,10 +52,10 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
         setBackgroundPosY(oldY => {
             return oldY.map((y: number, i: number) => {
                 const layer = backgroundConfig.backgroundLayerData[i].layer;
-                const speedModY = backgroundConfig.globalParallaxSettings.layerSpeedModFunction(layer);
+                const speedModY = backgroundConfig.parallaxSettings.layerSpeedModFunction(layer);
 
-                const minY = backgroundConfig.backgroundLayerData[i].backgroundPosY - backgroundConfig.globalParallaxSettings.yMargin;
-                const maxY = backgroundConfig.backgroundLayerData[i].backgroundPosY + backgroundConfig.globalParallaxSettings.yMargin;
+                const minY = backgroundConfig.backgroundLayerData[i].backgroundPosY - backgroundConfig.parallaxSettings.yMargin;
+                const maxY = backgroundConfig.backgroundLayerData[i].backgroundPosY + backgroundConfig.parallaxSettings.yMargin;
 
                 const newY = y + (speedY * speedModY)
                 const yCeil = Math.min(maxY, newY);
@@ -84,13 +84,13 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
         })
 
         Promise.all(promises).then((newBackgroundData: BackgroundConfigLayerData[]) => {
-            if (hillsRef.current) {
-                hillsRef.current.style.backgroundColor = `${palette[0]}`;
-                hillsRef.current.style.backgroundImage = newBackgroundData.map(val => val.backgroundUrl).join(', ');
+            if (backgroundDivRef.current) {
+                backgroundDivRef.current.style.backgroundColor = `${palette[0]}`;
+                backgroundDivRef.current.style.backgroundImage = newBackgroundData.map(val => val.backgroundUrl).join(', ');
                 setBackgroundPosX(newBackgroundData.map(val => val.backgroundPosX));
                 setBackgroundPosY(newBackgroundData.map(val => val.backgroundPosY));
                 setParallaxOn(true);
-                hillsRef.current.style.opacity = "1";
+                backgroundDivRef.current.style.opacity = "1";
             }
         });
     }
@@ -99,7 +99,7 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
         loadBackground(backgroundConfig, color);
     }, []);
 
-    const style: CSSProperties = hillsRef.current ?
+    const style: CSSProperties = backgroundDivRef.current ?
         {
             backgroundPositionX: formatBackgroundPosArrayPX(backgroundPosX),
             backgroundPositionY: formatBackgroundPosArrayRelativeToPos("bottom", backgroundPosY.map(val => `calc(min(-50px, -5vw) - ${val}px)`))
@@ -108,10 +108,8 @@ export default function ParallaxBackground({ disable, children }: PropsWithChild
         {}
 
     return (
-        <>
-            <div onMouseMove={event => move(event.movementX, event.movementY, parallaxOn)} style={style} ref={hillsRef} className="hills-background">
-                {children}
-            </div>
-        </>
+        <div onMouseMove={event => move(event.movementX, event.movementY, parallaxOn)} style={style} ref={backgroundDivRef} className="parallax-background">
+            {children}
+        </div>
     )
 }

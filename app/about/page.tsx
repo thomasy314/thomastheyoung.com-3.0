@@ -1,11 +1,11 @@
-import ParallaxBackground from "@/components/background/parallaxbackground";
+import LayeredBackground from "@/components/background/layeredbackground";
 import SocialMediaIcons from "@/components/ui/socialmediaicons";
 
 
 export default function AboutMe() {
     return (
-        <ParallaxBackground disable>
-            <div className="flex flex-col justify-top items-center w-full h-full bg-white/50 backdrop-blur-md py-20 overflow-scroll">
+        <LayeredBackground>
+            <div className="flex flex-col justify-top items-center w-full h-full bg-white/50 backdrop-blur-md py-20 overflow-auto">
                 <h1 className="font-display text-9xl">Hello!</h1>
                 <div className="w-3/4 xl:w-1/2 text-justify pt-5">
                     <p>
@@ -26,6 +26,6 @@ export default function AboutMe() {
                     <SocialMediaIcons size={28} className="pt-10" />
                 </div>
             </div>
-        </ParallaxBackground>
+        </LayeredBackground>
     )
 }

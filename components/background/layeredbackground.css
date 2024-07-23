@@ -1,0 +1,44 @@
+#layered-background {
+    min-height: 100%;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    background-color: #D3D3D3;
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+    overflow-y: hidden;
+    height: 100%;
+    background-position-x:
+        0px,
+        0px,
+        0px,
+        0px,
+        0px,
+        0px,
+        0px,
+        0px;
+    background-position-y:
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px),
+        bottom calc(min(-50px, -5vw) + -100px);
+    background-image:
+        url('../../Images/hills/hills1.svg'),
+        url('../../Images/hills/hills2.svg'),
+        url('../../Images/hills/lupin.svg'),
+        url('../../Images/hills/hills3.svg'),
+        url('../../Images/hills/cloudsFront.svg'),
+        url('../../Images/hills/hills4Top.svg'),
+        url('../../Images/hills/hills4Bottom.svg'),
+        url('../../Images/hills/cloudsBack.svg');
+    opacity: 0;
+    -webkit-transition: opacity 1.5s linear;
+    -moz-transition: opacity 1.5s linear;
+    -o-transition: opacity 1.5s linear;
+    -ms-transition: opacity 1.5s linear;
+    transition: opacity 1.5s linear;
+}

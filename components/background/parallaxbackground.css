@@ -42,13 +42,12 @@
     }
 }
 
-.hills-background {
+.parallax-background {
     --base-background-pos-y: calc(min(-50px, -5vw) - 40px);
     --background-pos-offset-y: 20px;
     --base-background-pos-x: 0px;
     --background-pos-offset-x: 200px;
 
-    min-height: 100%;
     overflow: hidden;
     background-repeat: repeat-x;
     background-color: #D3D3D3;

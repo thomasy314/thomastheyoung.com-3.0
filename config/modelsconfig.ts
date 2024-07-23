@@ -1,4 +1,5 @@
 import { AmanitaMuscaria } from "@/components/models/amanitamuscaria"
+import { FlammulinaFiliformis } from "@/components/models/flammulinafiliformis"
 import { MorchellaEsculenta } from "@/components/models/morchellaesculenta"
 import { PleurotusDjamor } from "@/components/models/pleurotusdjamor"
 import { DirectionalLightProps } from "@react-three/fiber"
@@ -73,7 +74,30 @@ const modelData: ModelData[] = [
                 position: [-5, 0, -5] // back left top
             },
         ]
+    },
+    {
+        name: "Enoki",
+        subtitle: "Flamulina filiformis",
+        model: FlammulinaFiliformis,
+        startPosition: [0, 0, 6],
+        bulletColor: "#FFFFFF",
+        lights: [
+            {
+                position: [5, 7, 5], // front right top
+            },
+            {
+                position: [-5, 7, 5], // front left top
+            },
+            {
+                position: [5, 0, -5] // back right top
+            },
+            {
+                position: [-5, 0, -5] // back left top
+            },
+        ]
     }
 ]
+
+modelData.sort((a, b) => a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase()));
 
 export default modelData;
