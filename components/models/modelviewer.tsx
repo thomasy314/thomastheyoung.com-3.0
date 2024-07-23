@@ -59,10 +59,10 @@ export default function ModelViewer() {
           </Canvas>
         </div>
       </div>
-      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-1/2 opacity-0 z-20">
+      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 opacity-0 z-20">
         {selectionList}
       </div>
-      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-1/2 z-0">
+      <div className="absolute bottom-10 flex flex-col md:flex-row items-center justify-center w-full md:w-1/2 z-0">
         {selectionList}
       </div>
     </div>

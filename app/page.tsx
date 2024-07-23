@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <ParallaxBackground disable>
       <div className="flex flex-col justify-center items-center w-full h-full">
-        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
+        <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl">
           Thomas Young
         </h1>
         <SocialMediaIcons size={28} />
