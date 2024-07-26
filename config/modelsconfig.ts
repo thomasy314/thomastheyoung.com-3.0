@@ -1,5 +1,6 @@
 import { AmanitaMuscaria } from "@/components/models/amanitamuscaria"
 import { FlammulinaFiliformis } from "@/components/models/flammulinafiliformis"
+import { GameboyKeycap } from "@/components/models/gameboykeycap"
 import { MorchellaEsculenta } from "@/components/models/morchellaesculenta"
 import { PleurotusDjamor } from "@/components/models/pleurotusdjamor"
 import { DirectionalLightProps } from "@react-three/fiber"
@@ -95,7 +96,28 @@ const modelData: ModelData[] = [
                 position: [-5, 0, -5] // back left top
             },
         ]
-    }
+    },
+    {
+        name: "Gameboy Keycap",
+        subtitle: "",
+        model: GameboyKeycap,
+        startPosition: [0, 0, 50],
+        bulletColor: "#EFBE00",
+        lights: [
+            {
+                position: [5, 3, 5]
+            },
+            {
+                position: [-8, 3, 3],
+                intensity: 0.25
+            },
+            {
+                position: [-8, 3, -5],
+                intensity: 0.5
+            }
+        ]
+    },
+
 ]
 
 modelData.sort((a, b) => a.name.toLocaleLowerCase().localeCompare(b.name.toLocaleLowerCase()));
