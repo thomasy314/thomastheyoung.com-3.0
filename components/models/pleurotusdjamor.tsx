@@ -35,16 +35,16 @@ export function PleurotusDjamor(props: JSX.IntrinsicElements['group']) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Oyster_1.geometry} material={materials.Pink} position={[-2.695, 0.089, 0.821]} rotation={[0.012, -0.22, 0.097]} />
-      <mesh geometry={nodes.Oyster_2.geometry} material={materials.Pink} position={[1.83, 0.629, -0.138]} rotation={[-0.058, -0.035, -0.208]} scale={[0.951, 1.022, 1.025]} />
-      <mesh geometry={nodes.Oyster_3.geometry} material={materials.Pink} position={[-3.179, 0.986, -1.886]} rotation={[0.226, -0.917, 0.369]} scale={[0.951, 1.022, 1.025]} />
-      <mesh geometry={nodes.Oyster_6.geometry} material={materials.Pink} position={[-1.906, -2.345, 0.119]} rotation={[-0.236, -0.623, -0.316]} scale={[1, 1.46, 1.025]} />
-      <mesh geometry={nodes.Oyster_7.geometry} material={materials.Pink} position={[2.99, -1.953, 1.151]} rotation={[0, 0.729, 0.29]} scale={[0.855, 1.248, 0.876]} />
-      <mesh geometry={nodes.Oyster_8.geometry} material={materials.Pink} position={[3.335, -1.021, 1.034]} rotation={[-0.378, 0.109, 0.434]} scale={[0.557, 0.886, 0.636]} />
-      <mesh geometry={nodes.Oyster_85.geometry} material={materials.Pink} position={[0.474, -0.981, 1.476]} rotation={[-0.623, 0.231, 0.022]} scale={[0.44, 0.741, 0.533]} />
-      <mesh geometry={nodes.Oyster_9.geometry} material={materials.Pink} position={[0.55, -3.148, 2.299]} scale={[1.122, 1.46, 1.025]} />
-      <mesh geometry={nodes.Oyster_11.geometry} material={materials.Pink} position={[3.257, 2.278, -1.138]} rotation={[-0.567, 0.821, 0.361]} scale={[0.626, 1.014, 0.712]} />
-      <mesh geometry={nodes.Oyster_10.geometry} material={materials.Pink} position={[-0.806, 2.618, -2.022]} rotation={[-0.406, -0.134, -0.092]} scale={[0.815, 1.374, 0.963]} />
+      <mesh geometry={nodes.Oyster_1.geometry} material={materials.Pink} position={[-2.695, 1.089, 0.821]} rotation={[0.012, -0.22, 0.097]} />
+      <mesh geometry={nodes.Oyster_2.geometry} material={materials.Pink} position={[1.83, 1.629, -0.138]} rotation={[-0.058, -0.035, -0.208]} scale={[0.951, 1.022, 1.025]} />
+      <mesh geometry={nodes.Oyster_3.geometry} material={materials.Pink} position={[-3.179, 1.986, -1.886]} rotation={[0.226, -0.917, 0.369]} scale={[0.951, 1.022, 1.025]} />
+      <mesh geometry={nodes.Oyster_6.geometry} material={materials.Pink} position={[-1.906, -1.345, 0.119]} rotation={[-0.236, -0.623, -0.316]} scale={[1, 1.46, 1.025]} />
+      <mesh geometry={nodes.Oyster_7.geometry} material={materials.Pink} position={[2.99, -0.953, 1.151]} rotation={[0, 0.729, 0.29]} scale={[0.855, 1.248, 0.876]} />
+      <mesh geometry={nodes.Oyster_8.geometry} material={materials.Pink} position={[3.335, -0.021, 1.034]} rotation={[-0.378, 0.109, 0.434]} scale={[0.557, 0.886, 0.636]} />
+      <mesh geometry={nodes.Oyster_85.geometry} material={materials.Pink} position={[0.474, 0.019, 1.476]} rotation={[-0.623, 0.231, 0.022]} scale={[0.44, 0.741, 0.533]} />
+      <mesh geometry={nodes.Oyster_9.geometry} material={materials.Pink} position={[0.55, -2.148, 2.299]} scale={[1.122, 1.46, 1.025]} />
+      <mesh geometry={nodes.Oyster_11.geometry} material={materials.Pink} position={[3.257, 3.278, -1.138]} rotation={[-0.567, 0.821, 0.361]} scale={[0.626, 1.014, 0.712]} />
+      <mesh geometry={nodes.Oyster_10.geometry} material={materials.Pink} position={[-0.806, 3.618, -2.022]} rotation={[-0.406, -0.134, -0.092]} scale={[0.815, 1.374, 0.963]} />
     </group>
   )
 }

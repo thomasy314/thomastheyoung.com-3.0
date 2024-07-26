@@ -21,12 +21,10 @@ type GLTFResult = GLTF & {
 export function FlammulinaFiliformis(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/Flammulina_filiformis.glb') as GLTFResult
 
-  const yOffset = -0.85
-
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder.geometry} material={materials.cream} position={[0, 0.132 + yOffset, 0]} scale={0.923} />
-      <mesh geometry={nodes.Enoki_with_hole2.geometry} material={materials.cream} position={[0, yOffset, 0]} />
+      <mesh geometry={nodes.Cylinder.geometry} material={materials.cream} position={[0, -0.518, 0]} scale={0.923} />
+      <mesh geometry={nodes.Enoki_with_hole2.geometry} material={materials.cream} position={[0, -0.65, 0]} />
     </group>
   )
 }

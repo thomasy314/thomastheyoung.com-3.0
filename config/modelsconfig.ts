@@ -101,7 +101,7 @@ const modelData: ModelData[] = [
         name: "Gameboy Keycap",
         subtitle: "",
         model: GameboyKeycap,
-        startPosition: [0, 0, 50],
+        startPosition: [0, 0, 60],
         bulletColor: "#EFBE00",
         lights: [
             {

@@ -33,14 +33,14 @@ export function GameboyKeycap(props: JSX.IntrinsicElements['group']) {
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.GameboyBody.geometry} material={materials.Cream} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyButtonA.geometry} material={materials.Burgundy} position={[3.596, 3.338, 5.564]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyButtonB.geometry} material={materials.Burgundy} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyButtonDPad.geometry} material={materials.Black} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyButtonStart.geometry} material={materials.Grey} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyButtonSelect.geometry} material={materials.Grey} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.GameboyBodyTop.geometry} material={materials.Grey} position={[-1.438, 0, -2.226]} rotation={[Math.PI, 0, Math.PI]} />
-      <mesh geometry={nodes.Cartridge.geometry} material={materials.Yellow} position={[-1.462, 3.309, -4.426]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyBody.geometry} material={materials.Cream} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyButtonA.geometry} material={materials.Burgundy} position={[5.096, 5.338, 7.79]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyButtonB.geometry} material={materials.Burgundy} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyButtonDPad.geometry} material={materials.Black} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyButtonStart.geometry} material={materials.Grey} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyButtonSelect.geometry} material={materials.Grey} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.GameboyBodyTop.geometry} material={materials.Grey} position={[0.062, 2, 0]} rotation={[Math.PI, 0, Math.PI]} />
+      <mesh geometry={nodes.Cartridge.geometry} material={materials.Yellow} position={[0.38, 5.309, -2.2]} rotation={[Math.PI, 0, Math.PI]} />
     </group>
   )
 }

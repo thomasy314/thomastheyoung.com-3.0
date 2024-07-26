@@ -7,12 +7,11 @@ import modelData, { ModelData } from "@/config/modelsconfig";
 import { IconPointFilled } from "@tabler/icons-react";
 
 function Loader() {
-  return <Html className="animate-bounce" center>Loading.</Html>
+  return <Html className="animate-bounce w-full flex justify-center" center>Loading</Html>
 }
 
 export default function ModelViewer() {
   const [curModel, setCurModel] = useState<ModelData>(modelData[0]);
-  const [modelSelectScrollLoc, setModelSelectScrollLoc] = useState<string>("-3rem");
 
 
   const selectionList = modelData.map((info, i) => [
@@ -36,10 +35,6 @@ export default function ModelViewer() {
     return <PerspectiveCamera makeDefault position={curModel.startPosition} />;
   }
 
-  const modelSelectStyle = {
-    top: modelSelectScrollLoc
-  }
-
   return (
     <div className='flex flex-col relative justify-center items-center h-screen overflow-hidden'>
       <div className="flex flex-col items-center" >
@@ -55,7 +50,7 @@ export default function ModelViewer() {
             {lights}
             <pointLight position={[0, -20, 0]} intensity={20} decay={0.75} />
             <Suspense fallback={<Loader />}>
-              <curModel.model rotation={[0, 0.7, 0]} />
+              <curModel.model /> 
             </Suspense>
           </Canvas>
         </div>
